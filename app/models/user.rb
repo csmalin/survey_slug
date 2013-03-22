@@ -1,10 +1,8 @@
 class User < ActiveRecord::Base
  
-  has_many :posts
-  has_many :comments
-  has_many :post_votes
-  has_many :comment_votes
-  validates :password_hash, :presence => true
+ has_many :surveys
+ has_many :active_surveys
+ 
   include BCrypt
 
   def password
