@@ -1,9 +1,16 @@
 <nav>
-  <p>We put..</p>
-  <h1><a href = "/">Birds On Things</a></h1>
+  <span id="logo"><a href = "/">Survey Slug</a></span>
   <ul>
-    <li><a href = "/upload">Upload</a></li>
-    <li><a href = "/random">Random</a></li>
+    <li><a href = "/browse">Browse Surveys</a></li>
+    <%# if current_user %>
+    <li><a href = "/surveys/create">Create Survey</a></li>
+    <li><a href = "/profile">Your Profile</a></li>
     <li><a href = "/logout">Log Out</a></li>
+    <%# else %>
+    <!-- <li><a href = "/login">Log In</a></li> -->
+    <%= erb :_login_form, :layout => false %>
+    <%# end %>
+    <li> 
   </ul>
+
 </nav>

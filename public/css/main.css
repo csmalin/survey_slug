@@ -7,11 +7,17 @@ body {
     width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    border: 1px solid red;
 }
 
 nav, form, fieldset, article {
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+.content {
+  clear:both;
+  overflow: auto;
 }
 
 
@@ -30,14 +36,12 @@ nav {
   clear: both;
 }
 
-nav h1 {
+#logo {
   font-family: 'Fontdiner Swanky', cursive;
   text-shadow: 2px 2px 2px #000;
   filter: dropshadow(color=#000, offx=2, offy=2);
   float: left;
-  width: 350px;
   font-size: 30px;
-  border-right: 1px solid #CACCED;
   text-transform: uppercase;
   line-height: 30px;
 }
@@ -52,13 +56,16 @@ nav ul {
   margin: 0;
   list-style: none;
   text-align: center;
-  float: right;
+}
+
+nav li {
+  display: inline;
 }
 
 nav li a {
   display: block;
   padding: 5px 20px;
-  margin:0 80px 0 0;
+  margin:0 40px 0 0;
   line-height: 20px;
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
@@ -102,18 +109,25 @@ nav li a:nth-of-type(3):hover {
   color:#18D697;
 }
 
+.splash_info {
+  float: left;
+  width: 490px;
+}
+
+
 form {
-  clear: both;
+  /*clear: both;*/
   width: 490px;
 }
 
 
   form.login {
     float: left;
+    display: none;
   }
 
   form.signup {
-    float: left;
+    float: right;
   }
 
 input[type=text], input[type=password] {
