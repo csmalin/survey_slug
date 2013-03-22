@@ -1,4 +1,4 @@
 class Response < ActiveRecord::Base
   belongs_to :option
-  has_many :active_surveys
+  belongs_to :active_survey
 end
