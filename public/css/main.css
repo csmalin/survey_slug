@@ -122,13 +122,21 @@ form {
 
 
   form.login {
-    float: left;
-    display: none;
+    position: absolute;
+    width: 250px;
+    background-color: #fff;
+    visibility: hidden;
   }
 
   form.signup {
     float: right;
   }
+
+
+.login_button {
+  overflow: hidden;
+  position: relative;
+}
 
 input[type=text], input[type=password] {
   width: 90%;
