@@ -10,5 +10,8 @@ post '/survey' do
                   :survey_id => @survey.id
   Option.create :choice => params[:option][:choice],
                 :question_id => @question.id
+                puts "*" *100
+    puts params
+    puts "*" *100
   redirect '/'
 end
