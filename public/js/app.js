@@ -17,7 +17,6 @@ $(document).ready(function(){
     var questionNumber = parseInt(event.target.id);
     var id = '#' + String(questionNumber);
     var currentQuestion = $(id + '.question');
-    debugger
     alert(currentQuestion);
     var questionId = $('.question').attr('id'); 
     
