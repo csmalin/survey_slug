@@ -1,8 +1,8 @@
-get '/survey' do
+get '/survey/create' do
   erb :create_survey
 end
 
-post '/survey' do
+post '/survey/create' do
 
     puts params
     puts "*" *100
@@ -10,8 +10,9 @@ post '/survey' do
     puts params[:survey][:description]
 
     @survey = Survey.create :description => params[:survey][:description],
-                              :title => params[:survey][:title]
-
+                            :title => params[:survey][:title],
+                            :user_id => current_user.id
+    
     params[:question].each_pair do |key, question|
       puts question
       @question = Question.create :inquisition => question,
@@ -25,4 +26,14 @@ post '/survey' do
     end
 
   redirect '/'
+end
+
+get '/survey/take' do
+  erb :take_survey
+end
+
+post '/survey/:id/take' do
+##create responses to question
+  @survey = Survey.find(params[:id])
+  @active_survey = ActiveSurvey.create 
 end
