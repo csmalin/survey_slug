@@ -11,7 +11,6 @@ $(document).ready(function(){
   }
    
   function IsPassword(password) {
-    console.log('yo the password arg is:', password)
 
      if (password.length < 8) {
         $('#errors').append("<li>Password must be at least 8 characters long</li>");
@@ -30,12 +29,9 @@ $(document).ready(function(){
    
    
   $('form.signup').submit(function(e) {
-    console.log($("input#email").val());
-    console.log($("input#signup_password").val());
-
     pass = true;
     $('ul#errors').empty();
-    IsEmail($("input#email").val());
+    IsEmail($("input#signup_email").val());
     IsPassword($("input#signup_password").val());
 
     if (pass == false) {

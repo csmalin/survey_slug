@@ -35,7 +35,11 @@ get '/logout' do
   redirect '/'
 end
 
-# get '/profile' do
-#   @user = User.find(session[:id])
-# end
+get '/profile' do
+  @user = User.find(session[:id])
+  @created_surveys = Survey.where('user_id = ?', @user.id)
+  @answered_surveys = ActiveSurvey.where('user_id = ?', @user.id)
+
+  erb :profile
+end
 

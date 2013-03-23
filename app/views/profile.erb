@@ -1,0 +1,54 @@
+<div class = "content">
+  <h1>Hey, <%= @user.username %></h1>
+  <div class= "profile_created">
+    <h2>Surveys Taken</h2>
+    <strong><a href="#">Browse Surveys</a></strong>
+    <% @answered_surveys.each do |survey| %>
+      <li><a href="#"><%= survey.title %></a></li>
+    <% end %>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+
+  </div>
+  <aside>
+    <h2>Created Surveys</h2>   
+    <strong><a href="/survey">Create New Survey</a></strong>
+    <% @created_surveys.each do |survey| %>
+      <li><span id="strong"><a href="#"><%= survey.title %></a></span></li>
+    <% end %>
+            <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+      <li>The best filler text</li>
+  </aside> 
+</div>

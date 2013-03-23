@@ -1,7 +1,7 @@
 require 'faker'
 
 50.times do 
-  User.new :email => Faker::Internet.email,
+  User.create :email => Faker::Internet.email,
               :password_hash => "password",
               :username => Faker::Lorem.name
 end
