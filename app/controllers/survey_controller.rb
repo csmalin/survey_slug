@@ -3,6 +3,8 @@ get '/survey' do
 end
 
 post '/survey' do
+
+  puts params
   @survey = Survey.create :description => params[:survey][:description],
                           :title => params[:survey][:title]
 #TODO: how many times to step through?

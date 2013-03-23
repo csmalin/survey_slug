@@ -5,6 +5,9 @@ body {
   color: #00182E;
 
 }
+div {
+  border: 2px solid green;
+}
 
 .container {
     width: 1000px;
