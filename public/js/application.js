@@ -12,5 +12,4 @@ $(document).ready(function(){
         $('form.login').css("visibility", "hidden")
       }
   });
-
 });

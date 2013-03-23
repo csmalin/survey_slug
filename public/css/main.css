@@ -20,6 +20,10 @@ nav, form, fieldset, article {
   overflow: auto;
 }
 
+h1 {
+  font-family: Helvetica;
+  font-size: 2.5em;
+}
 
 a {
   padding-right: 20px;
@@ -55,7 +59,7 @@ nav ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  text-align: center;
+  text-align: right;
 }
 
 nav li {
@@ -142,6 +146,11 @@ input[type=text], input[type=password] {
   width: 90%;
   padding: 10px;
   margin-bottom: 20px;
+}
+
+ul#errors li {
+  color: red;
+  list-style: disc;
 }
 
 input[type=submit] {
