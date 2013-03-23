@@ -3,11 +3,12 @@
 
 <input type="text" name="survey[title]" placeholder="title">
 <input type="text" name="survey[description]" placeholder="description">
-<button id="add-question">Add Question</button>
-<div class="questions"><input type="text" class='question' id="0" name="question[0][question]" placeholder="question" >
+<a id="add-question">Add Question</a>
+<div class="question-box">
+<input type="text" class='question' id="0" name="question[0]" placeholder="question" >
 <a  class="add-choice" id = "0">Add Choice</a>
-<input type="text" name="option[0][][choice]" placeholder="option"> 
-<input type="text" name="option[0][][choice]" placeholder="option"> 
+<input type="text" name="option[0][]" placeholder="option"> 
+<input type="text" name="option[0][]" placeholder="option"> 
 <td></td>
 </div>
 <input type="submit">

@@ -4,28 +4,24 @@ $(document).ready(function(){
   
   $('#add-question').click(function(e){
     e.preventDefault();
-    var questionTemplate = "<div class='questions'><input type='text' id = '" + questionCounter + "' class='question' name='question[" + questionCounter + "][question]' placeholder='question'>"
+    var questionTemplate = "<div class='question-box'><input type='text' id = '" + questionCounter + "' class='question' name='question[" + questionCounter + "]' placeholder='question'>"
         questionTemplate += "<a class='add-choice' id = " + questionCounter + ">Add Choice</a>"
-        questionTemplate += "<input type='text' name='option["+questionCounter+"][][choice]'  placeholder='option'>"
-        questionTemplate += "<input type='text' name='option["+questionCounter+"][][choice]'  placeholder='option'> </div><br><br>"
+        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='option'>"
+        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='option'> </div>"
     questionCounter++;
-    $('.questions').last().after(questionTemplate);
-  });
-
-  function someBullshit(){
-    var questionNumber = parseInt(event.target.id); 
-    var optionTemplate = "<input type='text' name='option[" + questionNumber +"][][choice]'  placeholder='option'>"
-    console.log($('#' + questionNumber + '.add-choice').attr('id'));
-    $('#' + questionNumber + '.add-choice').append(optionTemplate)
-  };
-
- $('.questions').on("mouse", "mouseup", function(){
-  console.log("a click");
-    someBullshit();
+    $('.question-box').last().after(questionTemplate);
   });
 
 });
 
+
+ $(document).delegate(".add-choice", "mouseup", function(event){
+  event.stopPropagation()
+  var questionNumber = parseInt(event.target.id); 
+  var optionTemplate = "<input type='text' name='option[" + questionNumber +"][]'  placeholder='option'>"
+  console.log($('#' + questionNumber + '.add-choice').attr('id'));
+  $('#' + questionNumber + '.add-choice').append(optionTemplate);
+  });
 
 
 
