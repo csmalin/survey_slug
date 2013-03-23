@@ -1,6 +1,7 @@
 <nav>
   <span id="logo"><a href = "/">Survey Slug</a></span>
   <ul>
+
     <li><a href = "/browse">Browse Surveys</a></li>
     <% if current_user %>
       <li><a href = "/surveys/create">Create Survey</a></li>
@@ -11,6 +12,7 @@
         <%= erb :_login_form, :layout => false %></li>
 
     <% end %>
+
 
   </ul>
       
