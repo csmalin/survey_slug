@@ -28,12 +28,33 @@ post '/survey/create' do
   redirect '/'
 end
 
-get '/survey/take' do
+get '/browse' do 
+  @surveys = Survey.all
+  erb :browse
+end
+
+get '/survey/:id/results' do
+  @survey = Survey.find(params[:id])
+  # @results = ActiveSurvey.where('active_survey_id = ?', @active_survey.id)
+  erb :survey_results
+end
+
+get '/survey/:id/take' do
+  @survey = Survey.find(params[:id])
   erb :take_survey
 end
 
 post '/survey/:id/take' do
-##create responses to question
   @survey = Survey.find(params[:id])
-  @active_survey = ActiveSurvey.create 
+  @active_survey = ActiveSurvey.create :survey_id => @survey.id,
+                                       :user_id => current_user.id,
+                                       :title => @survey.title
+  
+  params[:option].each_pair do |k, v|
+    Response.create :question_id => k,
+                    :option_id => v,
+                    :active_survey_id => @active_survey.id.to_i                     
+  end
+
+  redirect '/profile'
 end

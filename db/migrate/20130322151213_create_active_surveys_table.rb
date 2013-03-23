@@ -1,4 +1,4 @@
-class CreateActiveSurveysTable < ActiveRecord::Migration
+ class CreateActiveSurveysTable < ActiveRecord::Migration
   def change
     create_table :active_surveys do |t|
       t.references :response

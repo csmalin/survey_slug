@@ -1,0 +1,12 @@
+<h1>Here are the muthafuckin results for <%= @survey.title %> </h1>
+<h2> This survey has been taken by <%= @survey.active_surveys.length %> people</h2>
+<% @survey.questions.each do |question| %>
+<h2> For the question <%= question.inquisition %>  </h2>
+<% question.options.each do |option| %>
+  <ul>
+    <li>
+      Picked <%= option.choice %> <%= option.responses.length %> time(s) (<%= 100 * (option.responses.length.to_f / @survey.active_surveys.length.to_f) %>%)
+    </li>
+  </ul>
+  <% end %>
+<% end %>
