@@ -4,11 +4,11 @@ $(document).ready(function(){
   
   $('#add-question').click(function(e){
     e.preventDefault();
-    var questionTemplate = "<div class='question-box' id = '" + questionCounter + "'><input type='text' id = '" + questionCounter + "' class='question' name='question[" + questionCounter + "]' placeholder='question'>"
+    var questionTemplate = "<div class='question-box' id = '" + questionCounter + "'><input type='text' id = '" + questionCounter + "' class='question' name='question[" + questionCounter + "]' placeholder='Question'>"
         questionTemplate += "<a class='remove-question' id = " + questionCounter + ">[-]</a> "
         questionTemplate += "<a class='add-choice' id = " + questionCounter + ">Add Choice</a>"
-        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='option'>"
-        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='option'> </div>"
+        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='Option'>"
+        questionTemplate += "<input type='text' name='option["+questionCounter+"][]'  placeholder='Option'> </div>"
     questionCounter++;
     $('.question-box').last().after(questionTemplate);
   });

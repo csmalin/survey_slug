@@ -20,7 +20,6 @@ post '/signup' do
   @user = User.new(params[:user])
   puts params[:password]
   unless @user.save
-    # Errors?
     erb :index
   else
     session[:id] = @user.id

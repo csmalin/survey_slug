@@ -2,7 +2,7 @@
 <h1>Hey, <%= @user.username %></h1>
 <div class= "profile_created">
   <h2>Surveys Taken</h2>
-  <strong><a href="#">Browse Surveys</a></strong>
+  <strong><a href="/browse">Browse Surveys</a></strong>
   <% @answered_surveys.each do |survey| %>
     <li><a href="/survey/<%= survey.survey_id %>/results"><%= survey.title %></a></li>
   <% end %>

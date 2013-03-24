@@ -52,10 +52,12 @@ get '/survey/:id/take' do
     survey_takers << active_survey.user_id
   end
   
-  if survey_takers.include?(current_user.id)
-    erb :survey_results
-  else
-    erb :take_survey
+  if current_user
+    if survey_takers.include?(current_user.id)
+      erb :survey_results
+    else
+      erb :take_survey
+    end
   end
 end
 
