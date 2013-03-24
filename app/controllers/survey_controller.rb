@@ -2,35 +2,23 @@ get '/survey/create' do
   erb :create_survey
 end
 
-# post '/survey/upload' do
-#   #how to find the survey if it's not created?
-#   photouploader = PhotoUploader.new
-#   photouploader.store!(params['photo'])
-#   Photo.create   :survey_id => @survey.id,
-#                  :picture => params['photo']
-#   erb :create_survey 
-# end
-
 post '/survey/create' do
-    puts params[:survey][:title]
-    puts params[:survey][:description]
-
-    @survey = Survey.create :description => params[:survey][:description],
-                            :title => params[:survey][:title],
-                            :user_id => current_user.id
+  @survey = Survey.create :description => params[:survey][:description],
+                          :title => params[:survey][:title],
+                          :user_id => current_user.id
+  
+  params[:question].each_pair do |key, question|
+    puts question
+    @question = Question.create :inquisition => question,
+                                :survey_id => @survey.id
     
-    params[:question].each_pair do |key, question|
-      puts question
-      @question = Question.create :inquisition => question,
-                                  :survey_id => @survey.id
-      
-      params[:option][key].each do |option|
-        puts option
-        Option.create :choice => option,
-                      :question_id => @question.id
+    params[:option][key].each do |option|
+      puts option
+      Option.create :choice => option,
+                    :question_id => @question.id
 
-      end
     end
+  end
   photouploader = PhotoUploader.new
   photouploader.store!(params['photo'])
   puts params['photo']
