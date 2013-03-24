@@ -6,9 +6,11 @@ body {
 
 }
 div .question-box {
+  background: #99ccff;
   margin-top: 10px;
-  padding: 10px;
-  border-top: 2px solid black;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .container {
@@ -67,6 +69,7 @@ a {
 
 a:hover {
   color:#FF7500;
+  cursor:pointer;
 }
 
 nav {
@@ -246,7 +249,7 @@ aside {
   padding-bottom: 10px;
 }
 
-.container input[type=submit] {
+.container input[type=submit], button {
   font-size:16px;
   font-family:Arial;
   font-weight:normal;
@@ -269,7 +272,7 @@ aside {
   box-shadow:inset 1px 1px 0px 0px #97c4fe;
 }
 
-.container input[type=submit]:hover {
+.container input[type=submit]:hover, button:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #1e62d0), color-stop(100%, #3d94f6) );
   background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
   background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
@@ -277,7 +280,7 @@ aside {
   background-color:#1e62d0;
 }
 
-.container input[type=submit]:active {
+.container input[type=submit]:active, button:active {
   position:relative;
   top:1px;
 }
