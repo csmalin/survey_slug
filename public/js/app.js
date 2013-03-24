@@ -12,7 +12,6 @@ $(document).ready(function(){
     questionCounter++;
     $('.question-box').last().after(questionTemplate);
   });
-
 });
 
 
@@ -21,7 +20,6 @@ $(document).ready(function(){
   event.preventDefault();
   var questionNumber = parseInt(event.target.id); 
   var optionTemplate = "<input type='text' name='option[" + questionNumber +"][]'  placeholder='option'>";
-  console.log($('#' + questionNumber + '.add-choice').attr('id'));
   $('#' + questionNumber + '.add-choice').append(optionTemplate);
   });
 

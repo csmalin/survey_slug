@@ -8,22 +8,22 @@ post '/survey/create' do
                           :user_id => current_user.id
   
   params[:question].each_pair do |key, question|
-    puts question
     @question = Question.create :inquisition => question,
                                 :survey_id => @survey.id
     
     params[:option][key].each do |option|
-      puts option
       Option.create :choice => option,
                     :question_id => @question.id
 
     end
   end
+
   photouploader = PhotoUploader.new
   photouploader.store!(params['photo'])
-  puts params['photo']
+
   Picture.create   :survey_id => @survey.id,
                    :picture => params['photo'][:filename]
+                   
   redirect '/profile'
 end
 
@@ -34,7 +34,6 @@ end
 
 get '/survey/:id/results' do
   @survey = Survey.find(params[:id])
-  # @results = ActiveSurvey.where('active_survey_id = ?', @active_survey.id)
   erb :survey_results
 end
 

@@ -2,17 +2,13 @@ get '/' do
   erb :index
 end
 
-
-# User Signup/Login
-
 post '/login' do
   @user = User.find_by_email(params[:user]["email"])
   if User.authenticate(params[:user])
-     session[:id] = @user.id
-     redirect "/profile"
+    session[:id] = @user.id
+    redirect "/profile"
   else
-     # @error = "You need a proper (and unique) email and password"
-     erb :index
+    erb :index
   end
 end
 

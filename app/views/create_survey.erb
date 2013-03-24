@@ -2,7 +2,7 @@
 <form method = "post" action="/survey/create" enctype="multipart/form-data">
   <p>Add a photo to your survey:</p> <input type="file" name='photo' value='picture' required><br><br>
   <input type="text" name="survey[title]" placeholder="Survey Title" required>
-  <textarea name="survey[description]" rows="5" cols="42" placeholder="Survey Description" required></textarea>
+  <textarea name="survey[description]" rows="5" placeholder="Survey Description" required></textarea>
   <div class="question-box" id="0">
     <input type="text" class='question' id="0" name="question[0]" placeholder="Question" >
     <a class="add-choice" id = "0">Add Choice</a>
