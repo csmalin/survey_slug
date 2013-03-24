@@ -1,3 +1,4 @@
+<h1>Survey List</h1>
 <% @surveys.each do |survey| %>
-<ul><a href='/survey/<%= survey.id %>/take'><%= survey.title %> </a>
+  <p><a href='/survey/<%= survey.id %>/take'><%= survey.title %></a></p>
 <% end %>

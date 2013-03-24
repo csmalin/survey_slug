@@ -3,7 +3,6 @@ get '/survey/create' do
 end
 
 post '/survey/create' do
-
     puts params
     puts "*" *100
     puts params[:survey][:title]
@@ -29,7 +28,7 @@ post '/survey/create' do
 end
 
 get '/browse' do 
-  @surveys = Survey.all
+  @surveys = Survey.order("created_at DESC")
   erb :browse
 end
 
@@ -39,6 +38,10 @@ get '/survey/:id/results' do
   erb :survey_results
 end
 
+delete '/survey/:id/results' do
+  @survey = Survey.find(params[:id])
+  @survey.destroy
+end
 # get '/profile/:id/results' do
 #   @survey = ActiveSurvey.find(params[:id])
 #   @questions = Survey.find(@survey.survey_id).questions
