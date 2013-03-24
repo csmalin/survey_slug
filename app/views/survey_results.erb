@@ -1,7 +1,7 @@
 <script type="text/javascript" src = "/js/graph.js"></script>
 
-<h1>Here are the results 
-<h2> This survey has been taken by <%= @survey.active_surveys.length %> people</h2>
+<h1>Here are the results for <%= @survey.title %>
+<h2> <%= @survey.active_surveys.length %> people have taken this survey</h2>
 <% @survey.questions.each do |question| %>
 <h2> For the question <%= question.inquisition %>  </h2>
 <% question.options.each do |option| %>
@@ -10,6 +10,27 @@
       Picked <%= option.choice %> <%= option.responses.length %> time(s) (<%= 100 * (option.responses.length.to_f / @survey.active_surveys.length.to_f) %>%)
     </li>
   </ul>
-<div class="graph"></div>
+  <br>
+    <% end %>
+<% end %>
+<div class="resultstable">
+<table border="2">
+  <tr>
+    <th>Choice</th>
+    <th>Percentage</th>
+  </tr>
+<% @survey.questions.each do |question| %>
+<tr>
+<th colspan="2"> <%= question.inquisition %></th>
+</tr>
+<% question.options.each do |option| %>
+<tr>
+  <td><%= option.choice %></td>
+  <td><%= 100 * option.responses.length.to_f / @survey.active_surveys.length.to_f %>%</td>
   <% end %>
 <% end %>
+</tr>
+</table>
+</div>
+
+

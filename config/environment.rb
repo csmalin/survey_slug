@@ -10,7 +10,8 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
-
+require 'carrierwave'
+require 'mini_magick'
 require 'pg'
 require 'active_record'
 require 'logger'

@@ -75,7 +75,7 @@ end
 get '/survey/:id/take' do
   @survey = Survey.find(params[:id])
   survey_takers = []
-
+  
   @survey.active_surveys.each do |active_survey|
     survey_takers << active_survey.user_id
   end
@@ -89,7 +89,6 @@ end
 
 post '/survey/:id/take' do
   @survey = Survey.find(params[:id])
-  #if active survey holds current_user id, redirect to a "no double dipping page"
   @active_survey = ActiveSurvey.create :survey_id => @survey.id,
                                        :user_id => current_user.id,
                                        :title => @survey.title

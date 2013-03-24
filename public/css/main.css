@@ -281,4 +281,15 @@ aside {
   position:relative;
   top:1px;
 }
-
+.resultstable  {
+  font-family: 'Merriweather Sans';
+  margin-left: 30%;
+  width:60%;
+  margin-right: 20%;
+}
+.resultstable td {
+  padding:10px;
+}
+.resultstable th {
+  padding: 10px
+}
