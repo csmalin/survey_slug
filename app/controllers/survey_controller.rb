@@ -2,9 +2,16 @@ get '/survey/create' do
   erb :create_survey
 end
 
+# post '/survey/upload' do
+#   #how to find the survey if it's not created?
+#   photouploader = PhotoUploader.new
+#   photouploader.store!(params['photo'])
+#   Photo.create   :survey_id => @survey.id,
+#                  :picture => params['photo']
+#   erb :create_survey 
+# end
+
 post '/survey/create' do
-    puts params
-    puts "*" *100
     puts params[:survey][:title]
     puts params[:survey][:description]
 
@@ -21,9 +28,14 @@ post '/survey/create' do
         puts option
         Option.create :choice => option,
                       :question_id => @question.id
+
       end
     end
-
+  photouploader = PhotoUploader.new
+  photouploader.store!(params['photo'])
+  puts params['photo']
+  Picture.create   :survey_id => @survey.id,
+                   :picture => params['photo'][:filename]
   redirect '/profile'
 end
 
@@ -42,40 +54,12 @@ delete '/survey/:id/results' do
   @survey = Survey.find(params[:id])
   @survey.destroy
 end
-# get '/profile/:id/results' do
-#   @survey = ActiveSurvey.find(params[:id])
-#   @questions = Survey.find(@survey.survey_id).questions
-  
-#   my_as = User.find(current_user.id).active_surveys
-#   my_res = my_as.find(params[:id]).responses
-#   to_find_option = my_res.option_id
 
-#   my_questions = []
-#   my_answers = []
-  
-#   to_find_option.each do |option|
-#     my_questions << option.question_id
-#     my_answers << option.option_id
-#   end
-  
-#   @questions_for_view = []
-#   @answers_for_view = []
-  
-#   my_questions.each do |x|
-#     @questions_for_view << Question.find(x).inquisition
-#   end
-
-#   my_answers.each do |x|
-#     @answers_for_view << Option.find(x).choice
-#   end
-
-#   erb :individual_results
-# end
 
 get '/survey/:id/take' do
   @survey = Survey.find(params[:id])
   survey_takers = []
-  
+
   @survey.active_surveys.each do |active_survey|
     survey_takers << active_survey.user_id
   end

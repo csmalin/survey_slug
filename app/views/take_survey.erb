@@ -1,6 +1,7 @@
 <div class="survey">
   <h1><%= @survey.title %></h1>
   <h3><%= @survey.description %></h3>
+  <h1><img src="/photos/<%= @survey.picture.picture.gsub(' ', '_') %>" ></h1>
   <form method="post" action="/survey/<%= @survey.id %>/take">
     <% @survey.questions.each do |question| %>
       <ul><%= question.inquisition %></ul>
