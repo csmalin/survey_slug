@@ -3,8 +3,8 @@ body {
   font-family: 'Helvetica';
   font-size: 18px;
   color: #00182E;
-
 }
+
 div .question-box {
   background: #99ccff;
   margin-top: 10px;
@@ -23,15 +23,10 @@ div .question-box {
     padding: 20px;
 }
 
-.content {
-    border: 2px solid #000;
-}
-
 nav, form, fieldset, article, .content {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
-
 }
 
 .content {
@@ -39,6 +34,7 @@ nav, form, fieldset, article, .content {
   overflow: auto;
   background-color: #D4D6D4;
   padding: 20px;
+  border: 2px solid #000;
 }
 
 h1 {
@@ -49,7 +45,6 @@ h1 {
   font-style: italic;
   color: #FF7500;
   text-shadow: 3px 3px 3px #00182E;
-
 }
 
 h2 {
@@ -100,11 +95,6 @@ nav {
   letter-spacing: -3px;
 }
 
-nav p {
-  font-size: 8px;
-}
-
-
 nav ul {
   padding: 0;
   margin: 0;
@@ -127,26 +117,10 @@ nav li a {
   line-height: 20px;
 }
 
-nav li a:active {
-  position:relative;
-  top:1px;
-}
-
-nav li a:nth-of-type(3) {
-  margin: 0;
-  background: none;
-  border: none;
-}
-
-nav li a:nth-of-type(3):hover {
-  color:#18D697;
-}
-
 .splash_info {
   float: left;
   width: 460px;
 }
-
 
 form {
   width: 460px;

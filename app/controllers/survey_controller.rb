@@ -58,6 +58,8 @@ get '/survey/:id/take' do
     else
       erb :take_survey
     end
+  else
+    erb :guest_view
   end
 end
 
